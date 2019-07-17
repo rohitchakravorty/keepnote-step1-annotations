@@ -12,7 +12,15 @@
 		
 
 		<!-- dependency for JUNIT 4 to be added -->
-		<dependency>
+	  <!-- https://mvnrepository.com/artifact/junit/junit -->
+	  <dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>4.12</version>
+		  <scope>test</scope>
+	  </dependency>
+
+	  <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
@@ -20,22 +28,58 @@
 		</dependency>
 
 		<!-- Dependency for Spring Web MVC to be added -->
+	  <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	  <dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-webmvc</artifactId>
+		  <version>5.1.8.RELEASE</version>
+	  </dependency>
 
-		<dependency>
+
+	  <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.0.2.RELEASE</version>
 		</dependency>
 
 		<!-- Dependency for JSTL to be added -->
-		
-		<!-- Dependency for jaxb-api to be added(if using JDK9) -->
+	  <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+	  <dependency>
+		  <groupId>jstl</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>1.2</version>
+	  </dependency>
 
-		<!-- Dependency for jaxb-impl to be added(if using JDK9) -->
 
-		<!-- Dependency for Spring Test to be added -->
+	  <!-- Dependency for jaxb-api to be added(if using JDK9) -->
+	  <!-- https://mvnrepository.com/artifact/javax.xml/jaxb-api -->
+	  <dependency>
+		  <groupId>javax.xml</groupId>
+		  <artifactId>jaxb-api</artifactId>
+		  <version>2.1</version>
+	  </dependency>
 
-		<dependency>
+
+
+	  <!-- Dependency for jaxb-impl to be added(if using JDK9) -->
+	  <!-- https://mvnrepository.com/artifact/javax.xml/jaxb-impl -->
+	  <dependency>
+		  <groupId>javax.xml</groupId>
+		  <artifactId>jaxb-impl</artifactId>
+		  <version>2.1</version>
+	  </dependency>
+
+
+	  <!-- Dependency for Spring Test to be added -->
+	  <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+	  <dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-test</artifactId>
+		  <version>4.0.5.RELEASE</version>
+		  <scope>test</scope>
+	  </dependency>
+
+	  <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>5.0.2.RELEASE</version>
