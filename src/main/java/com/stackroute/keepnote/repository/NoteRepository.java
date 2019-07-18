@@ -7,10 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 
 /*
- * This class contains the code for data storage interactions and methods 
+ * This class contains the code for data storage interactions and methods
  * of this class will be used by other parts of the applications such
  * as Controllers and Test Cases
- * */
+ */
 
 public class NoteRepository {
 	List<Note> list;

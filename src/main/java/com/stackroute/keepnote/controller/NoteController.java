@@ -8,8 +8,8 @@ package com.stackroute.keepnote.controller;
 import com.stackroute.keepnote.model.Note;
 import com.stackroute.keepnote.repository.NoteRepository;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,7 +45,7 @@ public class NoteController {
 	public ModelAndView getAllNotes()
 	{
 
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.stackroute.Config");
 		this.note = applicationContext.getBean(Note.class);
 		this.noteRepository = applicationContext.getBean(NoteRepository.class);
 		ModelAndView mv=new ModelAndView("index");
@@ -69,7 +69,7 @@ public class NoteController {
 	@RequestMapping(value = "/saveNote",method = RequestMethod.POST)
 	public ModelAndView addNote(@RequestParam("noteId")int noteId,@RequestParam("noteTitle")String noteTitle,@RequestParam("noteStatus")String noteStatus,@RequestParam("noteContent")String noteContent)
 	{
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.stackroute.Config");
 		this.note = applicationContext.getBean(Note.class);
 		this.noteRepository = applicationContext.getBean(NoteRepository.class);
 		ModelAndView mv=new ModelAndView("index");
@@ -90,12 +90,12 @@ public class NoteController {
 	@RequestMapping(value = "/deleteNote")
 	public ModelAndView deleteNote(@RequestParam("noteId")int noteId)
 	{
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.stackroute.Config");
 		this.note = applicationContext.getBean(Note.class);
 		this.noteRepository = applicationContext.getBean(NoteRepository.class);
 		ModelAndView mv=new ModelAndView("redirect:/");
 		noteRepository.deleteNote(noteId);
-		mv.addObject("repo",noteRepository.getAllNotes());
+		//mv.addObject("repo",noteRepository.getAllNotes());
 		return mv;
 	}
 	
